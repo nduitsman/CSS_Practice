@@ -1,0 +1,156 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(6,6,6);
+  }
+  h1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    transform: translate(-50%, -50%);
+    background: inset 0 0 10px rgba(0,0,0,0.5);
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 60rem;
+    height: 30%;
+    margin-top: 3rem;
+    position: relative;
+  }
+  .row-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0;
+  }
+  .row1, .row2, .row3, .row4 {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding-right: 2rem;
+  }
+  .row1 {
+    animation: primary-scroll 20s linear infinite;
+  }
+  .row2 {
+    animation: primary-scroll 23s linear infinite;
+  }
+  .row3 {
+    animation: primary-scroll 18s linear infinite;
+  }
+  .row4 {
+    animation: primary-scroll 21s linear infinite;
+  }
+  /* .row1 > img {
+      position: relative;
+      z-index: 1;
+      overflow: visible;
+      filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
+  } */
+  
+  .header::before {
+    content: "";
+      position: absolute;
+      left: -10px;
+      top: 0px;
+      background: linear-gradient(270deg, rgb(6, 6, 6) 10%, rgba(6, 6, 6, 0) 100%);
+      transform: rotate(-180deg);
+      will-change: transform;
+      width: 300px;
+      height: 100%;
+      z-index: 1;
+  }
+  .header::after {
+      content: "";
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      background: linear-gradient(90deg, rgb(6, 6, 6) 10%, rgba(6, 6, 6, 0) 100%);
+      transform: rotate(-180deg);
+      will-change: transform;
+      width: 300px;
+      height: 100%;
+      z-index: 1;
+  }
+  .squarecopy {
+      position: relative;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      width: 4rem;
+    aspect-ratio: 1/1;
+      flex-shrink: 0;
+      border-radius: 25%;
+      overflow: hidden;
+      box-shadow: rgb(255 255 255 / 25%) 0px 1px 1px 0px inset;
+      background: linear-gradient(0deg, rgb(24, 25, 28) 20%, rgb(33, 34, 37) 60%);
+  }
+  .subsquare1,.subsquare2,.subsquare3,.subsquare4,.subsquare5,.subsquare6,.subsquare7,.subsquare8,.subsquare9,.subsquare10,.subsquare11 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30%;
+      height: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(10px);
+      opacity: 0.7;
+      overflow: visible;
+  }
+  .subsquare1 {background: linear-gradient(90deg, rgb(155, 248, 85) 0%, rgb(70, 227, 183,0.7) 40%);}
+  .subsquare2 {background: linear-gradient(90deg, rgb(255, 248, 185) 0%, rgb(170, 27, 183,0.7) 40%);}
+  .subsquare3 {background: linear-gradient(90deg, rgb(255, 248, 85) 0%, rgb(70, 227, 83,0.7) 40%);}
+  .subsquare4 {background: linear-gradient(90deg, rgb(255, 28, 85) 0%, rgb(70, 70, 183,0.7) 40%);}
+  .subsquare5 {background: linear-gradient(90deg, rgb(255, 248, 85) 0%, rgb(70, 227, 18,0.7) 40%);}
+  .subsquare6 {background: linear-gradient(90deg, rgb(255, 248, 85) 0%, rgb(10, 10, 220,0.7) 40%);}
+  .subsquare7 {background: linear-gradient(90deg, rgb(255, 248, 85) 0%, rgb(170, 0, 0,0.7) 40%);}
+  .subsquare8 {background: linear-gradient(90deg, rgb(255, 248, 85) 0%, rgb(0, 227, 0,0.7) 40%);}
+  .subsquare9 {background: linear-gradient(90deg, rgb(255, 248, 85) 0%, rgb(170, 170, 0,0.7) 40%);}
+  .subsquare10 {background: linear-gradient(90deg, rgb(255, 248, 85) 0%, rgb(0, 0, 183,0.7) 40%);}
+  .subsquare11 {background: linear-gradient(90deg, rgb(255, 248, 85) 0%, rgb(70, 0, 10,0.7) 40%);}
+  @keyframes primary-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .squarecopy {
+        width: 2.5rem;
+        aspect-ratio: 1/1;
+        font-size: 1.5rem;
+    }
+    .header::before, .header::after {
+        width: 100px;
+    }
+    .header img {
+        width: 50%;
+        height: 50%;
+    }
+}
