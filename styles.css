@@ -13,12 +13,28 @@ body {
     font-weight: bold;
     font-size: 3rem;
     transform: translate(-50%, -50%);
-    background: inset 0 0 10px rgba(0,0,0,0.5);
-    padding: 0.5rem;
+    padding: 1rem;
     width: 100%;
     text-align: center;
     backdrop-filter: blur(10px);
     z-index: 2;
+  }
+  .header-h1 {
+    /* background: linear-gradient(to right, rgb(255,255,255,0.2), rgb(255,255,255,0.9), rgb(255,255,255,0.2)); */
+    background: linear-gradient(to right, green, yellowgreen, yellow, yellowgreen, green);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    animation: background-pan 3s linear infinite;
+  }
+  @keyframes background-pan {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 200%;
+    }
   }
   .header {
     display: flex;
