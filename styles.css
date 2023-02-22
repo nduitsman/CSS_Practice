@@ -4,6 +4,39 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(6,6,6);
+    margin: 0;
+  }
+  #blur {
+    height: 200%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    backdrop-filter: blur(200px);
+    z-index: 0;
+  }
+  #blob {
+    background-color: white;
+    height: 300px;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    bottom: -25%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    /* animation: rotate 12s infinite; */
+    z-index: -1;
+  }
+  @keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+    50% {
+        scale: 1 1.5;
+    }
+    to {
+        rotate: 360deg;
+    }
   }
   h1 {
     position: absolute;
@@ -13,14 +46,13 @@ body {
     font-weight: bold;
     font-size: 3rem;
     transform: translate(-50%, -50%);
-    padding: 1rem;
+    padding: 1rem 0;
     width: 100%;
     text-align: center;
     backdrop-filter: blur(10px);
     z-index: 2;
   }
   .header-h1 {
-    /* background: linear-gradient(to right, rgb(255,255,255,0.2), rgb(255,255,255,0.9), rgb(255,255,255,0.2)); */
     background: linear-gradient(to right, green, yellowgreen, yellow, yellowgreen, green);
     background-size: 200%;
     -webkit-background-clip: text;
@@ -42,8 +74,10 @@ body {
     width: 100%;
     max-width: 60rem;
     height: 30%;
-    margin-top: 3rem;
+    padding: 3rem 0;
     position: relative;
+    background: rgb(6,6,6);
+    z-index: 1;
   }
   .row-container {
     display: flex;
@@ -74,17 +108,10 @@ body {
   .row4 {
     animation: primary-scroll 21s linear infinite;
   }
-  /* .row1 > img {
-      position: relative;
-      z-index: 1;
-      overflow: visible;
-      filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
-  } */
-  
   .header::before {
     content: "";
       position: absolute;
-      left: -10px;
+      left: 0px;
       top: 0px;
       background: linear-gradient(270deg, rgb(6, 6, 6) 10%, rgba(6, 6, 6, 0) 100%);
       transform: rotate(-180deg);
