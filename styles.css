@@ -8,7 +8,7 @@ body {
   }
   #blur {
     height: 200%;
-    width: 100%;
+    width: 200%;
     position: fixed;
     bottom: 0;
     backdrop-filter: blur(200px);
@@ -182,11 +182,13 @@ body {
   
 .hacker {
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: 'Arial', monospace;
     z-index: 2;
 }
-
+.fb-plugin {
+  margin-bottom: 4rem;
+}
 @media only screen and (max-width: 800px) {
     h1 {
         font-size: 2rem;
